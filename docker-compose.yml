@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  log_server:
+    container_name: log_server
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - .:/home/log_server
+    environment:
+      ENV: configuration.development
+      AWS_ACCESS_KEY_ID: <access key>
+      AWS_SECRET_ACCESS_KEY: <secret key>
